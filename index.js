@@ -10,6 +10,7 @@ const stripeRoute = require("./routes/stripe")
 const cors = require("cors")
 const rateLimit = require("express-rate-limit")
 const app = express();
+const PORT  = process.env.PORT || 5000
 
 dotenv.config();
 
@@ -37,6 +38,6 @@ app.use("/api/checkout" , stripeRoute);
 
 
 
-app.listen( 5000 , () => {
+app.listen( PORT , () => {
   console.log("Backend Server Is Running!")
 })
